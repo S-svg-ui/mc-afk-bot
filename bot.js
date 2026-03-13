@@ -3,7 +3,7 @@ const mineflayer = require('mineflayer')
 function createBot () {
   const bot = mineflayer.createBot({
     host: process.env.HOST || "mumumelelo.falix.gg",
-    port: parseInt(process.env.PORT) || 25565,
+    port: parseInt(process.env.PORT) || 26737,
     username: process.env.USERNAME || "AFK_Bot_24x7",
     version: "1.21.1",  // ✅ Explicit version for your server
     auth: 'offline'     // cracked server
