@@ -6,6 +6,8 @@ function startBot(){
     port: 25565,
     username: 'AFK_Bot_24x7'
     resourcePack: https://www.dropbox.com/scl/fi/nc90aovcgd48a7pagd7zi/SodiumGUI.zip?rlkey=73ixyu8rsbsu8zbarht30wqv8&st=elitidic&dl=1
+    auth: 'offline'
+     version: '1.21.1'
   })
 
   bot.on('spawn', () => {
