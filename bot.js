@@ -5,7 +5,7 @@ function startBot(){
     host: 'mumumelelo.falix.gg',
     port: 25565,
     username: 'AFK_Bot_24x7'
-    https://www.dropbox.com/scl/fi/nc90aovcgd48a7pagd7zi/SodiumGUI.zip?rlkey=73ixyu8rsbsu8zbarht30wqv8&st=elitidic&dl=1
+    resourcePack: https://www.dropbox.com/scl/fi/nc90aovcgd48a7pagd7zi/SodiumGUI.zip?rlkey=73ixyu8rsbsu8zbarht30wqv8&st=elitidic&dl=1
   })
 
   bot.on('spawn', () => {
