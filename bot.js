@@ -1,30 +1,39 @@
 const mineflayer = require('mineflayer')
 
-function startBot(){
+function createBot () {
   const bot = mineflayer.createBot({
-    host: 'mumumelelo.falix.gg',
-    port: 25565,
-    username: 'AFK_Bot_24x7'
-    resourcePack: https://www.dropbox.com/scl/fi/nc90aovcgd48a7pagd7zi/SodiumGUI.zip?rlkey=73ixyu8rsbsu8zbarht30wqv8&st=elitidic&dl=1
-    auth: 'offline'
-     version: '1.21.1'
+    host: process.env.HOST || "mumumelelo.falix.gg",
+    port: parseInt(process.env.PORT) || 25565,
+    username: process.env.USERNAME || "AFK_Bot_24x7",
+    version: "1.21.1",  // ✅ Explicit version for your server
+    auth: 'offline'     // cracked server
   })
 
   bot.on('spawn', () => {
-    console.log("Bot joined server")
+    console.log("✅ Joined server 1.21.1!")
 
+    // Anti-AFK jumping
     setInterval(() => {
       bot.setControlState('jump', true)
-      setTimeout(()=> bot.setControlState('jump', false), 500)
-    }, 30000)
+      setTimeout(() => bot.setControlState('jump', false), 400)
+    }, 25000)
   })
 
+  // Resource pack auto accept
+  bot.on('resourcePack', (url) => {
+    console.log("📦 Resource pack:", url)
+    bot.acceptResourcePack()
+  })
+
+  bot.on('kicked', (reason) => console.log("⚠️ Kicked:", reason))
+  bot.on('error', (err) => console.log("❌ Error:", err))
+
+  // Reconnect if disconnected
   bot.on('end', () => {
-    console.log("Reconnecting...")
-    setTimeout(startBot, 10000)
+    console.log("⏳ Disconnected — reconnecting in 5s")
+    setTimeout(createBot, 5000)
   })
-
-  bot.on('error', console.log)
 }
 
-startBot()
+createBot()
+
