@@ -6,7 +6,7 @@ function createBot () {
     port: parseInt(process.env.PORT) || 26737,
     username: process.env.USERNAME || "AFK_Bot_24x7",
     version: "1.21.1",  // ✅ Explicit version for your server
-    auth: 'offline'     // cracked server
+    auth: 'online'     // cracked server
   })
 
   bot.on('spawn', () => {
