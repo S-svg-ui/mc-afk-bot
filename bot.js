@@ -1,5 +1,5 @@
 const mineflayer = require('mineflayer')
-
+//hi
 function createBot() {
   const bot = mineflayer.createBot({
     host: process.env.HOST || "mumumelelo.falix.gg",
